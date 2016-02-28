@@ -228,7 +228,7 @@ except KeyboardInterrupt:
 # Gambler
 # Logan
 # Coffnix
-# Jhon
+# Jh00nbr
 # M4dwolf
 # g3ol4d0
 # canhoto
