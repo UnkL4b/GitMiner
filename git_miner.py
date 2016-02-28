@@ -229,6 +229,7 @@ except KeyboardInterrupt:
 # Logan
 # Coffnix
 # Jh00nbr
+# Bruno Viadom
 # M4dwolf
 # g3ol4d0
 # canhoto
