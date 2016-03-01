@@ -9,9 +9,9 @@
 ## WARNING
 ```
  +---------------------------------------------------+
- | THIS TOOL IS THE PENALTY FOR EDUCATIONAL USE,     |
- | THE AUTHOR IS NOT RESPONSIBLE FOR ANY DAMAGE TO   |
- | THE TOOL THAT USE.                                |
+ | DEVELOPERS ASSUME NO LIABILITY AND ARE NOT        |
+ | RESPONSIBLE FOR ANY MISUSE OR DAMAGE CAUSED BY    |
+ | THIS PROGRAM                                      |
  +---------------------------------------------------+
 ```
 
