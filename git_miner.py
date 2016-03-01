@@ -34,9 +34,9 @@ class GitMiner(object):
 """ + frescurinha.WARNING + \
 "\n +[" + frescurinha.FAIL + "WARNING" + frescurinha.WARNING \
 + "]------------------------------------------+" \
-"\n | THIS TOOL IS THE PENALTY FOR EDUCATIONAL USE,     |" \
-"\n | THE AUTHOR IS NOT RESPONSIBLE FOR ANY DAMAGE TO   |" \
-"\n | THE TOOL THAT USE.                                |" \
+"\n | DEVELOPERS ASSUME NO LIABILITY AND ARE NOT        |" \
+"\n | RESPONSIBLE FOR ANY MISUSE OR DAMAGE CAUSED BY    |" \
+"\n | THIS PROGRAM                                      |" \
 "\n +---------------------------------------------------+\n\n" + frescurinha.ENDC
 
         parser = argparse.ArgumentParser(self.descricao)
