@@ -38,7 +38,7 @@ git clone http://github.com/danilovazb/GitMiner
 
 sudo apt-get install python-requests python-lxml 
 OR
-pip install lxml requests
+pip install -r requirements.txt
 ```
 
 ### HELP
