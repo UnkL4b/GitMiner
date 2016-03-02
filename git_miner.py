@@ -244,5 +244,8 @@ except KeyboardInterrupt:
 # Clebeer
 # A.Ramos
 #
+# Toda galera do time RTFM, é muito nego pra dar gr33tz
+# sem dúvidas vocês são fodas!
+#
 # Seus puto, voces sao ph0d4s
 ##################################################################################
