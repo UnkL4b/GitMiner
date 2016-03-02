@@ -24,12 +24,10 @@ snippets on github through the site's search page.
 ### MOTIVATION
 Demonstrates the fragility of trust in public repositories to store codes with sensitive information.
 
-### REQUERIMENTS
+### REQUIREMENTS
 ```
-argparse
-requests
-json
 lxml
+requests
 ```
 
 ### INSTALL
