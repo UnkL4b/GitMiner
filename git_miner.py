@@ -43,7 +43,7 @@ class GitMiner(object):
         parser.add_argument('-q','--query', metavar=frescurinha.OKBLUE + '\'filename:shadown path:etc\''\
             + frescurinha.ENDC, help=frescurinha.HELP + 'Specify search term' + frescurinha.ENDC)
         parser.add_argument('-m','--module', metavar=frescurinha.OKBLUE + 'wordpress' + frescurinha.ENDC,\
-            help=frescurinha.HELP + 'Specify the search module' + frescurinha.ENDC)
+            help=frescurinha.HELP + 'Specify the search module' + frescurinha.ENDC, default=None)
         parser.add_argument('-o','--output', metavar=frescurinha.OKBLUE + 'result.txt' + frescurinha.ENDC,\
             help=frescurinha.HELP + 'Specify the output file where it will be saved' + frescurinha.ENDC,default=None)
 
@@ -51,6 +51,10 @@ class GitMiner(object):
         self.user_agent = {"User-Agent":"Mozilla/5.0 (X11; Linux x86_64)\
             AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36"}
         self.args = parser.parse_args()
+        if self.args.query is None: 
+            os.system('cls' if os.name == 'nt' else 'clear')
+            parser.print_help()
+            exit()
         self.search_term = "/search?o=desc&q=%s&s=indexed&type=Code&utf8=✓" % self.args.query
         self.ignora_modulo = "n"
         self.config = None
@@ -172,6 +176,10 @@ class GitMiner(object):
             print("| [" + frescurinha.OKBLUE + "LAST INDEXED" + frescurinha.ENDC + "]: %s" % last_indexed[number_link])
             self.saveOutput("| [LAST INDEXED]: %s\n" % last_indexed[number_link])
             self.parseCode(code_boladao)
+            if "s" in self.ignora_modulo:
+                print(frescurinha.HELP + "+----------------------------------------------------+"+ frescurinha.ENDC)
+                self.saveOutput("+----------------------------------------------------+\n")
+                
             
             #DEBUG DE MLK ZIKA
             #tree_file = html.fromstring(HTML.content)
