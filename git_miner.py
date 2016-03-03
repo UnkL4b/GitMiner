@@ -6,6 +6,9 @@ from lxml import html
 import os
 os.system('cls' if os.name == 'nt' else 'clear')
 
+import codecs
+codecs.register(lambda name: codecs.lookup('utf-8') if name == 'cp65001' else None)
+
 class frescurinha:
     HELP = '\033[1;36m'
     OKBLUE = '\033[1;94m'
