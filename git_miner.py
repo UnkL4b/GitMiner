@@ -40,7 +40,7 @@ class GitMiner(object):
 "\n +---------------------------------------------------+\n\n" + frescurinha.ENDC
 
         parser = argparse.ArgumentParser(self.descricao)
-        parser.add_argument('-q','--query', metavar=frescurinha.OKBLUE + '\'filename:shadown path:etc\''\
+        parser.add_argument('-q','--query', metavar=frescurinha.OKBLUE + '\'filename:shadow path:etc\''\
             + frescurinha.ENDC, help=frescurinha.HELP + 'Specify search term' + frescurinha.ENDC)
         parser.add_argument('-m','--module', metavar=frescurinha.OKBLUE + 'wordpress' + frescurinha.ENDC,\
             help=frescurinha.HELP + 'Specify the search module' + frescurinha.ENDC, default=None)
