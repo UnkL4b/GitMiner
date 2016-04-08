@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Gitminer by danilovazb</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Gitminer</h1>
+        <h2>Tool for advanced mining for content on Github</h2>
+        <a href="https://github.com/danilovazb/GitMiner" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <p><img src="https://3.bp.blogspot.com/-UvpR_QDDAT0/VtiIc8OKrrI/AAAAAAAAboM/69BNKrvdUsU/s1600/gitminer-628x360.png" alt="Screenshot"></p>
+
+<pre><code> + Autor: Danilo Vaz a.k.a. UNK
+ + Blog: http://unk-br.blogspot.com
+ + Github: http://github.com/danilovazb
+ + Twitter: https://twitter.com/danilovaz_unk
+</code></pre>
+
+<h2>
+<a id="warning" class="anchor" href="#warning" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>WARNING</h2>
+
+<pre><code> +---------------------------------------------------+
+ | DEVELOPERS ASSUME NO LIABILITY AND ARE NOT        |
+ | RESPONSIBLE FOR ANY MISUSE OR DAMAGE CAUSED BY    |
+ | THIS PROGRAM                                      |
+ +---------------------------------------------------+
+</code></pre>
+
+<h3>
+<a id="description" class="anchor" href="#description" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>DESCRIPTION</h3>
+
+<pre><code>Advanced search tool and automation in Github.
+This tool aims to facilitate research by code or code 
+snippets on github through the site's search page.
+</code></pre>
+
+<h3>
+<a id="motivation" class="anchor" href="#motivation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>MOTIVATION</h3>
+
+<p>Demonstrates the fragility of trust in public repositories to store codes with sensitive information.</p>
+
+<h3>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>REQUIREMENTS</h3>
+
+<pre><code>lxml
+requests
+</code></pre>
+
+<h3>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>INSTALL</h3>
+
+<pre><code>git clone http://github.com/danilovazb/GitMiner
+
+sudo apt-get install python-requests python-lxml 
+OR
+pip install -r requirements.txt
+</code></pre>
+
+<h3>
+<a id="help" class="anchor" href="#help" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>HELP</h3>
+
+<pre><code>usage: 
+ ██████╗ ██╗████████╗███╗   ███╗██╗███╗   ██╗███████╗██████╗ 
+██╔════╝ ██║╚══██╔══╝████╗ ████║██║████╗  ██║██╔════╝██╔══██╗
+██║  ███╗██║   ██║   ██╔████╔██║██║██╔██╗ ██║█████╗  ██████╔╝
+██║   ██║██║   ██║   ██║╚██╔╝██║██║██║╚██╗██║██╔══╝  ██╔══██╗
+╚██████╔╝██║   ██║   ██║ ╚═╝ ██║██║██║ ╚████║███████╗██║  ██║
+ ╚═════╝ ╚═╝   ╚═╝   ╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝ v1.1
+ Automatic search for GitHub.                                                            
+
+ + Autor: Danilo Vaz a.k.a. UNK
+ + Blog: http://unk-br.blogspot.com
+ + Github: http://github.com/danilovazb
+ + Gr33tz: l33t0s, RTFM
+
+ +[WARNING]------------------------------------------+
+ | THIS TOOL IS THE PENALTY FOR EDUCATIONAL USE,     |
+ | THE AUTHOR IS NOT RESPONSIBLE FOR ANY DAMAGE TO   |
+ | THE TOOL THAT USE.                                |
+ +---------------------------------------------------+
+
+
+       [-h] [-q 'filename:shadown path:etc']
+       [-m wordpress] [-o result.txt]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -q 'filename:shadown path:etc', --query 'filename:shadown path:etc'
+                        Specify search term
+  -m wordpress, --module wordpress
+                        Specify the search module
+  -o result.txt, --output result.txt
+                        Specify the output file where it will be
+                        saved
+</code></pre>
+
+<h3>
+<a id="example" class="anchor" href="#example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>EXAMPLE</h3>
+
+<p>Searching for wordpress configuration files with passwords:</p>
+
+<pre><code>$:&gt; python git_miner.py -q 'filename:wp-config extension:php FTP_HOST in:file ' -m wordpress -o result.txt
+</code></pre>
+
+<p><img src="https://2.bp.blogspot.com/-GbpzROiEynQ/VtLytfMqQiI/AAAAAAAAbnk/5hDphP4Mbf4/s1600/wordpressEX.png" alt="Screenshot"></p>
+
+<p>Looking for brasilian government files containing passwords:</p>
+
+<pre><code>$:&gt; python git_miner.py --query 'extension:php "root" in:file AND "gov.br" in:file' -m senhas
+</code></pre>
+
+<p>Looking for shadow files on the etc paste:</p>
+
+<pre><code>$:&gt; python git_miner.py --query 'filename:shadow path:etc' -m root
+</code></pre>
+
+<p>Searching for joomla configuration files with passwords:</p>
+
+<pre><code>$:&gt; python git_miner.py --query 'filename:configuration extension:php "public password" in:file' -m joomla
+</code></pre>
+
+<p><img src="https://3.bp.blogspot.com/-1AsNmFKfsoA/VtLyvJFy2WI/AAAAAAAAbno/C7xTbxtzOo8/s1600/joomlaEX.png" alt="Screenshot"></p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/danilovazb/GitMiner/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/danilovazb/GitMiner/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/danilovazb/GitMiner"></a> is maintained by <a href="https://github.com/danilovazb">danilovazb</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
