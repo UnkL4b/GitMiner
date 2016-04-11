@@ -4,9 +4,9 @@ import argparse
 import json
 from lxml import html
 import os
-os.system('cls' if os.name == 'nt' else 'clear')
-
 import codecs
+
+os.system('cls' if os.name == 'nt' else 'clear')
 codecs.register(lambda name: codecs.lookup('utf-8') if name == 'cp65001' else None)
 
 class frescurinha:
