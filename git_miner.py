@@ -176,8 +176,11 @@ class GitMiner(object):
             self.saveOutput("| [USER]: %s\n" % usuario[number_link])
             print("| [" + frescurinha.OKBLUE + "LINK" + frescurinha.ENDC + "]: %s" % link)
             self.saveOutput("| [LINK]: %s\n" % link)
-            print("| [" + frescurinha.OKBLUE + "LAST INDEXED" + frescurinha.ENDC + "]: %s" % last_indexed[number_link])
-            self.saveOutput("| [LAST INDEXED]: %s\n" % last_indexed[number_link])
+            try:
+                print("| [" + frescurinha.OKBLUE + "LAST INDEXED" + frescurinha.ENDC + "]: %s" % last_indexed[number_link])
+                self.saveOutput("| [LAST INDEXED]: %s\n" % last_indexed[number_link])
+            except:
+                pass
             self.parseCode(code_boladao)
             if "s" in self.ignora_modulo:
                 print(frescurinha.HELP + "+----------------------------------------------------+"+ frescurinha.ENDC)
