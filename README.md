@@ -98,3 +98,6 @@ Searching for joomla configuration files with passwords:
 $:> python git_miner.py --query 'filename:configuration extension:php "public password" in:file' -m joomla
 ```
 ![Screenshot](https://3.bp.blogspot.com/-1AsNmFKfsoA/VtLyvJFy2WI/AAAAAAAAbno/C7xTbxtzOo8/s1600/joomlaEX.png)
+
+Hacking SSH Servers:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/yIJOlKZwQQw" frameborder="0" allowfullscreen></iframe>
