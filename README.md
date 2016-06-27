@@ -100,4 +100,5 @@ $:> python git_miner.py --query 'filename:configuration extension:php "public pa
 ![Screenshot](https://3.bp.blogspot.com/-1AsNmFKfsoA/VtLyvJFy2WI/AAAAAAAAbno/C7xTbxtzOo8/s1600/joomlaEX.png)
 
 Hacking SSH Servers
-[![ScreenShot](https://raw.github.com/GabLeRoux/WebMole/master/ressources/WebMole_Youtube_Video.png)](https://www.youtube.com/embed/yIJOlKZwQQw)
+
+[![Demo CountPages alpha](https://gifs.com/gif/unkl4b-gitminer-ssh-owned-qxk3YD)]((https://www.youtube.com/embed/yIJOlKZwQQw)
