@@ -101,4 +101,4 @@ $:> python git_miner.py --query 'filename:configuration extension:php "public pa
 
 Hacking SSH Servers
 
-[![Demo CountPages alpha](https://gifs.com/gif/unkl4b-gitminer-ssh-owned-qxk3YD)]((https://www.youtube.com/embed/yIJOlKZwQQw)
+[![Demo CountPages alpha](https://j.gifs.com/qxk3YD.gif)]((https://www.youtube.com/embed/yIJOlKZwQQw)
