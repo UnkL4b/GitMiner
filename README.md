@@ -99,6 +99,6 @@ $:> python git_miner.py --query 'filename:configuration extension:php "public pa
 ```
 ![Screenshot](https://3.bp.blogspot.com/-1AsNmFKfsoA/VtLyvJFy2WI/AAAAAAAAbno/C7xTbxtzOo8/s1600/joomlaEX.png)
 
-Hacking SSH Servers
+### Hacking SSH Servers
 
-https://www.youtube.com/watch?v=yIJOlKZwQQw
+[![Hacking SSH Servers](https://img.youtube.com/vi/yIJOlKZwQQw/0.jpg)](https://www.youtube.com/watch?v=yIJOlKZwQQw)
