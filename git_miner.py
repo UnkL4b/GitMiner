@@ -166,9 +166,9 @@ class GitMiner(object):
 
     def parseSearch(self,response):
         tree = html.fromstring(response)
-        url_arquivo = tree.xpath('//*[@id="code_search_results"]/div[1]/div[1]/div[1]/a[2]/@href')
-        last_indexed = tree.xpath('//*[@id="code_search_results"]/div[1]/div[1]/div[1]/div/span[2]/relative-time/text()')
-        usuario = tree.xpath('//*[@id="code_search_results"]/div[1]/div[1]/div[1]/a[1]/text()')
+        url_arquivo = tree.xpath('//div[contains(@class, "code-list-item-public")]/div[contains(@class, "d-inline-block")]/a[2]/@href')
+        last_indexed = tree.xpath('//div[contains(@class, "code-list-item-public")]/div[contains(@class, "mb-2")]/span[2]/relative-time/@title')
+        usuario = tree.xpath('//div[contains(@class, "code-list-item-public")]/a/img/@alt')
         prox_page = tree.xpath('//a[contains(@class, "next_page")]/@href')
         for number_link in range(len(url_arquivo)):
             link = self.url + url_arquivo[number_link].replace("blob","raw")
