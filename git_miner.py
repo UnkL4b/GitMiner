@@ -49,11 +49,14 @@ class GitMiner(object):
             help=frescurinha.HELP + 'Specify the search module' + frescurinha.ENDC, default=None)
         parser.add_argument('-o','--output', metavar=frescurinha.OKBLUE + 'result.txt' + frescurinha.ENDC,\
             help=frescurinha.HELP + 'Specify the output file where it will be saved' + frescurinha.ENDC,default=None)
+        parser.add_argument('-c','--cookie', metavar=frescurinha.OKBLUE + 'pAAAhPOma9jEsXyLWZ-16RTTsGI8wDawbNs4' + frescurinha.ENDC,\
+            help=frescurinha.HELP + 'Specify the cookie for your github' + frescurinha.ENDC,default=None)
 
         self.url = "http://github.com"
         self.user_agent = {"User-Agent":"Mozilla/5.0 (X11; Linux x86_64)\
             AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36"}
         self.args = parser.parse_args()
+        self.cookie = {'user_session':self.args.cookie}
         if self.args.query is None:
             os.system('cls' if os.name == 'nt' else 'clear')
             parser.print_help()
@@ -163,10 +166,9 @@ class GitMiner(object):
 
     def parseSearch(self,response):
         tree = html.fromstring(response)
-        url_arquivo = tree.xpath('//div[contains(@class, "code-list-item-public")]/p[contains(@class, "title")]/a[2]/@href')
-        last_indexed = tree.xpath('//div[contains(@class, "code-list-item-public")]/p[contains(@class, "title")]\
-                                  /span[contains(@class, "updated-at")]/time/text()')
-        usuario = tree.xpath('//div[contains(@class, "code-list-item-public")]/a/img[contains(@class, "avatar")]/@alt')
+        url_arquivo = tree.xpath('//*[@id="code_search_results"]/div[1]/div[1]/div[1]/a[2]/@href')
+        last_indexed = tree.xpath('//*[@id="code_search_results"]/div[1]/div[1]/div[1]/div/span[2]/relative-time/text()')
+        usuario = tree.xpath('//*[@id="code_search_results"]/div[1]/div[1]/div[1]/a[1]/text()')
         prox_page = tree.xpath('//a[contains(@class, "next_page")]/@href')
         for number_link in range(len(url_arquivo)):
             link = self.url + url_arquivo[number_link].replace("blob","raw")
@@ -200,7 +202,7 @@ class GitMiner(object):
         self.nextPage(prox_page)
 
     def accessWeb(self,url_acesso):
-        acc = requests.get(url_acesso, headers=self.user_agent)
+        acc = requests.get(url_acesso, headers=self.user_agent, cookies=self.cookie)
         if " find any code matching" in acc.text:
             print(frescurinha.FAIL + "[-] We couldn't find any code matching %s\n" % self.args.query + frescurinha.ENDC)
             exit()
@@ -230,36 +232,3 @@ try:
 except KeyboardInterrupt:
     print(frescurinha.WARNING + "\n\nBye Bye ;)" + frescurinha.ENDC)
     exit()
-
-##################################################################################
-# Easter-Egg? Talvez! Quero deixar um abraco pra toda galera que sempre me apoia
-#
-# Choko
-# SlackDummies
-# InurlBR / x27Null
-# SlayerOwner
-# Rogy153
-# Gambler
-# Logan
-# Coffnix
-# Jh00nbr
-# Bruno Viadom
-# M4dwolf
-# g3ol4d0
-# canhoto
-# AlanSanches
-# BlackPirate(LuquinhaMonstroDoPassinhoDoRomano)
-# Robertux
-# BrenoZika
-# Borelli
-# Henrique Panda
-# Fernando Leitao
-# DMR
-# Clebeer
-# A.Ramos
-#
-# Toda galera do time RTFM, é muito nego pra dar gr33tz
-# sem dúvidas vocês são fodas!
-#
-# Seus puto, voces sao ph0d4s
-##################################################################################
