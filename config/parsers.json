@@ -51,5 +51,17 @@
        "order1":"1",
        "order2":"3"
     }
+  },
+  "ssh":{
+   "contains":"",
+   "parameters":{
+       "param1":"host",
+       "param2":"username",
+       "param3":"password"
+    },
+    "splitparam":"\"",
+    "splitorder":{
+       "order1":"3"
+    }
   }
 }
