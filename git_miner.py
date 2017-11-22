@@ -56,8 +56,7 @@ class GitMiner(object):
         self.user_agent = {"User-Agent":"Mozilla/5.0 (X11; Linux x86_64)\
             AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36"}
         self.args = parser.parse_args()
-        #Tks gwen001 ;)
-        self.cookie = dict(cookies_are=self.args.cookie)
+        self.cookie = {'user_session':self.args.cookie}
         if self.args.query is None:
             os.system('cls' if os.name == 'nt' else 'clear')
             parser.print_help()
