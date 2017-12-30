@@ -9,6 +9,11 @@ import codecs
 os.system('cls' if os.name == 'nt' else 'clear')
 codecs.register(lambda name: codecs.lookup('utf-8') if name == 'cp65001' else None)
 
+try:
+    raw_input          # Python 2
+except NameError:
+    raw_input = input  # Python 3
+
 class frescurinha:
     HELP = '\033[1;36m'
     OKBLUE = '\033[1;94m'
