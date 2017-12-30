@@ -38,6 +38,14 @@ sudo apt-get install python-requests python-lxml
 OR
 pip install -r requirements.txt
 ```
+### Docker
+```
+git clone http://github.com/danilovazb/GitMiner
+cd GitMiner
+docker build -t gitminer .
+docker run -it gitminer -h
+```
+
 
 ### HELP
 ```
