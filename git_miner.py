@@ -136,7 +136,7 @@ class GitMiner(object):
                 print(frescurinha.HELP + "+----------------------------------------------------+"+ frescurinha.ENDC)
                 self.saveOutput("+----------------------------------------------------+\n")
 
-            if self.config[self.args.module]['parameters'] >= 1:
+            if len(self.config[self.args.module]['parameters']) >= 1:
                 qtd_param = int(len(self.config[self.args.module]['parameters']))
                 qtd_order = int(len(self.config[self.args.module]['splitorder']))
                 split_param = self.config[self.args.module]['splitparam']
