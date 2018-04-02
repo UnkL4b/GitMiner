@@ -33,6 +33,7 @@ class GitMiner(object):
 ██║   ██║██║   ██║   ██║╚██╔╝██║██║██║╚██╗██║██╔══╝  ██╔══██╗
 ╚██████╔╝██║   ██║   ██║ ╚═╝ ██║██║██║ ╚████║███████╗██║  ██║
  ╚═════╝ ╚═╝   ╚═╝   ╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝ v1.1
+ -
  Automatic search for GitHub.
 
  """+frescurinha.ENDC+frescurinha.FAIL+"""+ Autor:"""+frescurinha.ENDC+""" Danilo Vaz a.k.a. UNK
