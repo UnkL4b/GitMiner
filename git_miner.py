@@ -5,6 +5,7 @@ import json
 from lxml import html
 import os
 import codecs
+from RichConsole import groups, Sheet
 
 os.system('cls' if os.name == 'nt' else 'clear')
 codecs.register(lambda name: codecs.lookup('utf-8') if name == 'cp65001' else None)
@@ -15,18 +16,18 @@ except NameError:
     raw_input = input  # Python 3
 
 class frescurinha:
-    HELP = '\033[1;36m'
-    OKBLUE = '\033[1;94m'
-    OKGREEN = '\033[92m'
-    WARNING = '\033[1;93m'
-    FAIL = '\033[1;91m'
+    HELP = groups.Fore.lightcyanEx
+    OKBLUE = groups.Fore.lightblueEx
+    OKGREEN = groups.Fore.lightgreenEx
+    WARNING = Sheet((groups.Brightness.bright, groups.Fore.lightyellowEx))
+    FAIL = Sheet((groups.Brightness.bright, groups.Fore.lightredEx))
     ENDC = '\033[0m'
 
 class GitMiner(object):
 
     def __init__(self):
 
-        self.descricao = frescurinha.OKGREEN+"""
+        self.descricao = frescurinha.OKGREEN("""
  ██████╗ ██╗████████╗███╗   ███╗██╗███╗   ██╗███████╗██████╗
 ██╔════╝ ██║╚══██╔══╝████╗ ████║██║████╗  ██║██╔════╝██╔══██╗
 ██║  ███╗██║   ██║   ██╔████╔██║██║██╔██╗ ██║█████╗  ██████╔╝
@@ -36,27 +37,27 @@ class GitMiner(object):
  -
  Automatic search for GitHub.
 
- """+frescurinha.ENDC+frescurinha.FAIL+"""+ Autor:"""+frescurinha.ENDC+""" Danilo Vaz a.k.a. UNK
- """+frescurinha.FAIL+"""+ Blog:"""+frescurinha.ENDC+""" http://unk-br.blogspot.com
- """+frescurinha.FAIL+"""+ Github:"""+frescurinha.ENDC+""" http://github.com/danilovazb
- """+frescurinha.FAIL+"""+ Gr33tz:"""+frescurinha.ENDC+""" l33t0s, RTFM
-""" + frescurinha.WARNING + \
-"\n +[" + frescurinha.FAIL + "WARNING" + frescurinha.WARNING \
-+ "]------------------------------------------+" \
+ """)+frescurinha.FAIL("""+ Autor:""")+""" Danilo Vaz a.k.a. UNK
+ """+frescurinha.FAIL("""+ Blog:""")+""" http://unk-br.blogspot.com
+ """+frescurinha.FAIL("""+ Github:""")+""" http://github.com/danilovazb
+ """+frescurinha.FAIL("""+ Gr33tz:""")+""" l33t0s, RTFM
+""" + frescurinha.WARNING( \
+"\n +[" + frescurinha.FAIL("WARNING") + \
+"]------------------------------------------+" \
 "\n | DEVELOPERS ASSUME NO LIABILITY AND ARE NOT        |" \
 "\n | RESPONSIBLE FOR ANY MISUSE OR DAMAGE CAUSED BY    |" \
 "\n | THIS PROGRAM                                      |" \
-"\n +---------------------------------------------------+\n\n" + frescurinha.ENDC
+"\n +---------------------------------------------------+\n\n"
 
         parser = argparse.ArgumentParser(self.descricao)
-        parser.add_argument('-q','--query', metavar=frescurinha.OKBLUE + '\'filename:shadow path:etc\''\
-            + frescurinha.ENDC, help=frescurinha.HELP + 'Specify search term' + frescurinha.ENDC)
-        parser.add_argument('-m','--module', metavar=frescurinha.OKBLUE + 'wordpress' + frescurinha.ENDC,\
-            help=frescurinha.HELP + 'Specify the search module' + frescurinha.ENDC, default=None)
-        parser.add_argument('-o','--output', metavar=frescurinha.OKBLUE + 'result.txt' + frescurinha.ENDC,\
-            help=frescurinha.HELP + 'Specify the output file where it will be saved' + frescurinha.ENDC,default=None)
-        parser.add_argument('-c','--cookie', metavar=frescurinha.OKBLUE + 'pAAAhPOma9jEsXyLWZ-16RTTsGI8wDawbNs4' + frescurinha.ENDC,\
-            help=frescurinha.HELP + 'Specify the cookie for your github' + frescurinha.ENDC,default=None)
+        parser.add_argument('-q','--query', metavar=frescurinha.OKBLUE('\'filename:shadow path:etc\'')\
+            , help=frescurinha.HELP('Specify search term')
+        parser.add_argument('-m','--module', metavar=frescurinha.OKBLUE('wordpress'),\
+            help=frescurinha.HELP('Specify the search module', default=None)
+        parser.add_argument('-o','--output', metavar=frescurinha.OKBLUE('result.txt'),\
+            help=frescurinha.HELP('Specify the output file where it will be saved'),default=None)
+        parser.add_argument('-c','--cookie', metavar=frescurinha.OKBLUE('pAAAhPOma9jEsXyLWZ-16RTTsGI8wDawbNs4'),\
+            help=frescurinha.HELP('Specify the cookie for your github'),default=None)
 
         self.url = "http://github.com"
         self.user_agent = {"User-Agent":"Mozilla/5.0 (X11; Linux x86_64)\
@@ -79,8 +80,8 @@ class GitMiner(object):
             arquivo.close()
 
     def nextPage(self,prox_page):
-        print(frescurinha.HELP + "\n+[PAGE %s/%s]-----------------------------------------+" % (prox_page.split("&")[1].split("=")[1], self.number_page) + frescurinha.ENDC)
-        self.saveOutput("\n+[PAGE %s/%s]-----------------------------------------+\n" % (prox_page.split("&")[1].split("=")[1], self.number_page) + frescurinha.ENDC)
+        print(frescurinha.HELP("\n+[PAGE %s/%s]-----------------------------------------+" % (prox_page.split("&")[1].split("=")[1], self.number_page))
+        self.saveOutput("\n+[PAGE %s/%s]-----------------------------------------+\n" % (prox_page.split("&")[1].split("=")[1], self.number_page))
         HTML = self.accessWeb(prox_page)
         self.parseSearch(HTML.content)
 
@@ -92,8 +93,8 @@ class GitMiner(object):
                 confs_json = json.loads(confs)
 
             except:
-                print(frescurinha.FAIL + "\n[!] Configuration file not found in \"configs/\"" \
-                    "or not set.\nYou want to abort? [Y] [N]" + frescurinha.ENDC)
+                print(frescurinha.FAIL("\n[!] Configuration file not found in \"configs/\"" \
+                    "or not set.\nYou want to abort? [Y] [N]"))
                 resp = raw_input()
                 if "y" in resp.lower():
                     exit()
@@ -101,7 +102,7 @@ class GitMiner(object):
                     self.ignora_modulo = "s"
             try:
                 if self.args.module not in confs_json.keys():
-                    print(frescurinha.WARNING + "\n[?] \"%s\" module not set\nYou want to abort? [Y] [N] \n" % self.args.module + frescurinha.ENDC)
+                    print(frescurinha.WARNING("\n[?] \"%s\" module not set\nYou want to abort? [Y] [N] \n" % self.args.module))
                     resp = raw_input()
                     if "y" in resp.lower():
                         exit()
@@ -130,11 +131,11 @@ class GitMiner(object):
             else:
                 for line in range(len(code_boladao.split("\n"))):
                     if self.config[self.args.module]['contains'] in code_boladao.split("\n")[int(line)-1]:
-                        print("| [" + frescurinha.OKBLUE + "CONTAIN" + frescurinha.ENDC + "]: \"%s\" IN LINE: %s" % (self.config[self.args.module]['contains'], str(line)))
+                        print("| [" + frescurinha.OKBLUE("CONTAIN") + "]: \"%s\" IN LINE: %s" % (self.config[self.args.module]['contains'], str(line)))
                         self.saveOutput("| [CONTAIN]: \"%s\" IN LINE: %s\n" % (self.config[self.args.module]['contains'], str(line)))
 
             if not self.config[self.args.module]['parameters']:
-                print(frescurinha.HELP + "+----------------------------------------------------+"+ frescurinha.ENDC)
+                print(frescurinha.HELP("+----------------------------------------------------+"))
                 self.saveOutput("+----------------------------------------------------+\n")
 
             if len(self.config[self.args.module]['parameters']) >= 1:
@@ -157,17 +158,17 @@ class GitMiner(object):
                                 #print(line_code.split("%s" % split_param)[int(self.config[self.args.module]['splitorder'][order_name])])
 
             else:
-                print(frescurinha.HELP + "+----------------------------------------------------+"+ frescurinha.ENDC)
+                print(frescurinha.HELP("+----------------------------------------------------+"))
                 self.saveOutput("+----------------------------------------------------+\n")
                 pass
 
         if result_code:
-            print("| [" + frescurinha.OKBLUE + "PARAM FOUND" + frescurinha.ENDC + "]:")
+            print("| [" + frescurinha.OKBLUE("PARAM FOUND") + "]:")
             self.saveOutput("| [PARAM FOUND]:\n")
             for i in range(len(result_code)):
-                print("|" + frescurinha.WARNING + " -------------> " + frescurinha.ENDC + "%s" % result_code[i])
+                print("|" + frescurinha.WARNING(" -------------> ") + "%s" % result_code[i])
                 self.saveOutput("| -------------> %s\n" % result_code[i])
-            print(frescurinha.HELP + "+----------------------------------------------------+"+ frescurinha.ENDC)
+            print(frescurinha.HELP("+----------------------------------------------------+"))
             self.saveOutput("+----------------------------------------------------+\n")
 
     def parseSearch(self,response):
@@ -180,25 +181,25 @@ class GitMiner(object):
             link = self.url + url_arquivo[number_link].replace("blob","raw")
             HTML = self.accessWeb(link)
             code_boladao = HTML.text
-            print("| [" + frescurinha.OKBLUE + "USER" + frescurinha.ENDC + "]: %s" % usuario[number_link])
+            print("| [" + frescurinha.OKBLUE("USER") + "]: %s" % usuario[number_link])
             self.saveOutput("| [USER]: %s\n" % usuario[number_link])
-            print("| [" + frescurinha.OKBLUE + "LINK" + frescurinha.ENDC + "]: %s" % link)
+            print("| [" + frescurinha.OKBLUE("LINK") + "]: %s" % link)
             self.saveOutput("| [LINK]: %s\n" % link)
             try:
-                print("| [" + frescurinha.OKBLUE + "LAST INDEXED" + frescurinha.ENDC + "]: %s" % last_indexed[number_link])
+                print("| [" + frescurinha.OKBLUE("LAST INDEXED") + "]: %s" % last_indexed[number_link])
                 self.saveOutput("| [LAST INDEXED]: %s\n" % last_indexed[number_link])
             except:
                 pass
             self.parseCode(code_boladao)
             if "s" in self.ignora_modulo:
-                print(frescurinha.HELP + "+----------------------------------------------------+"+ frescurinha.ENDC)
+                print(frescurinha.HELP("+----------------------------------------------------+"))
                 self.saveOutput("+----------------------------------------------------+\n")
 
 
             #DEBUG DE MLK ZIKA
             #tree_file = html.fromstring(HTML.content)
             #print(tree_file.xpath('//div[contains(@class, "btn-group")]/a[contains(@id, "raw-url")]/@href'))
-            #print(frescurinha.OKBLUE + "%s" % link + frescurinha.ENDC)
+            #print(frescurinha.OKBLUE("%s" % link))
             #print("%s\n" % HTML.text)
 
         if not prox_page:
@@ -210,7 +211,7 @@ class GitMiner(object):
     def accessWeb(self,url_acesso):
         acc = requests.get(url_acesso, headers=self.user_agent, cookies=self.cookie)
         if " find any code matching" in acc.text:
-            print(frescurinha.FAIL + "[-] We couldn't find any code matching %s\n" % self.args.query + frescurinha.ENDC)
+            print(frescurinha.FAIL("[-] We couldn't find any code matching %s\n" % self.args.query))
             exit()
         return acc
 
@@ -229,12 +230,12 @@ class GitMiner(object):
         url_acesso = self.url + self.search_term
         HTML = self.accessWeb(url_acesso)
         self.number_page = self.parserPages(HTML.content)
-        print(frescurinha.HELP + "+[PAGE: 1/%s]-----------------------------------------+" % self.number_page + frescurinha.ENDC)
+        print(frescurinha.HELP("+[PAGE: 1/%s]-----------------------------------------+" % self.number_page) )
         self.saveOutput("+[PAGE: 1/%s]-----------------------------------------+\n" % self.number_page)
         self.parseSearch(HTML.content)
 
 try:
     GitMiner().start()
 except KeyboardInterrupt:
-    print(frescurinha.WARNING + "\n\nBye Bye ;)" + frescurinha.ENDC)
+    print(frescurinha.WARNING("\n\nBye Bye ;)") )
     exit()
