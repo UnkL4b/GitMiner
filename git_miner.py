@@ -55,14 +55,12 @@ class GitMiner(object):
             help=frescurinha.HELP + 'Specify the search module' + frescurinha.ENDC, default=None)
         parser.add_argument('-o','--output', metavar=frescurinha.OKBLUE + 'result.txt' + frescurinha.ENDC,\
             help=frescurinha.HELP + 'Specify the output file where it will be saved' + frescurinha.ENDC,default=None)
-        parser.add_argument('-c','--cookie', metavar=frescurinha.OKBLUE + 'pAAAhPOma9jEsXyLWZ-16RTTsGI8wDawbNs4' + frescurinha.ENDC,\
-            help=frescurinha.HELP + 'Specify the cookie for your github' + frescurinha.ENDC,default=None)
 
         self.url = "http://github.com"
         self.user_agent = {"User-Agent":"Mozilla/5.0 (X11; Linux x86_64)\
             AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36"}
         self.args = parser.parse_args()
-        self.cookie = {'user_session':self.args.cookie}
+        self.cookie = {'user_session':os.environ.get('GIT_COOKIE')}
         if self.args.query is None:
             os.system('cls' if os.name == 'nt' else 'clear')
             parser.print_help()
