@@ -1,4 +1,31 @@
 {
+  "asterisk":{
+    "contains":"",
+    "parameters":{
+      "param1":"username", 
+      "param2":"secret", 
+      "param3":"fromuser", 
+      "param4":"fromdomain", 
+      "param5":"host"
+    },
+    "splitparam":"=",
+    "splitorder":{
+       "order1":"1"
+    }
+  },
+  "gmail":{
+    "contains":"",
+    "parameters":{
+      "param1":"MAIL_HOST", 
+      "param2":"MAIL_PORT", 
+      "param3":"MAIL_USERNAME", 
+      "param4":"MAIL_PASSWORD" 
+    },
+    "splitparam":"=",
+    "splitorder":{
+       "order1":"1"
+    }
+  },
   "wordpress":{
     "contains":"root",
     "parameters":{
@@ -6,12 +33,12 @@
       "param2":"'FTP_PASS',",
       "param3":"'FTP_HOST',",
       "param4":"'DB_USER',",
-      "param5":"'DB_PASSWORD',"
+      "param5":"'DB_PASSWORD',",
+      "param6":"'DB_HOST',"
     },
     "splitparam":"'",
     "splitorder":{
-      "order1":"1",
-      "order2":"3"
+      "order1":"3"
     }
   },
   "senhas":{
@@ -62,6 +89,18 @@
     "splitparam":"\"",
     "splitorder":{
        "order1":"3"
+    }
+  },
+  "mup":{
+   "contains":"root",
+   "parameters":{
+       "param1":"host",
+       "param2":"username",
+       "param3":"password"
+    },
+    "splitparam":":",
+    "splitorder":{
+       "order1":"1"
     }
   }
 }
