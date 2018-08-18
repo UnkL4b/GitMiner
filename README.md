@@ -28,6 +28,9 @@ Demonstrates the fragility of trust in public repositories to store codes with s
 ```
 lxml
 requests
+argparse
+json
+re
 ```
 
 ### INSTALL
