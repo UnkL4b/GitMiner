@@ -122,7 +122,7 @@ $:> python gitminer-v2.0.py --query 'filename:configuration extension:php "publi
 [![Hacking SSH Servers](https://img.youtube.com/vi/yIJOlKZwQQw/0.jpg)](https://www.youtube.com/watch?v=yIJOlKZwQQw)
 
 ### Dork to search
-## by @techgaun (https://github.com/techgaun/github-dorks)
+##### by @techgaun (https://github.com/techgaun/github-dorks)
 
  Dork                                           | Description
 ------------------------------------------------|--------------------------------------------------------------------------
