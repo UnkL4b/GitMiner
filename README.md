@@ -1,3 +1,5 @@
+[![Python 2.7|3.6](https://img.shields.io/badge/Python-2.7%7C3.6-blue.svg)](https://www.python.org/) [![Gitminer 2.0](https://img.shields.io/badge/Gitminer-2.0-yellow.svg)](https://unkl4b.github.io)
+
 ![Screenshot](https://3.bp.blogspot.com/-UvpR_QDDAT0/VtiIc8OKrrI/AAAAAAAAboM/69BNKrvdUsU/s1600/gitminer-628x360.png)
 
 ```
@@ -35,18 +37,18 @@ re
 
 ### INSTALL
 ```
-git clone http://github.com/UnkL4b/GitMiner
+$ git clone http://github.com/UnkL4b/GitMiner
 
-sudo apt-get install python-requests python-lxml 
-OR
-pip install -r requirements.txt
+$ cd GitMiner
+
+~/GitMiner $ pip3 install -r requirements.txt
 ```
 ### Docker
 ```
-git clone http://github.com/UnkL4b/GitMiner
-cd GitMiner
-docker build -t gitminer .
-docker run -it gitminer -h
+$ git clone http://github.com/UnkL4b/GitMiner
+$ cd GitMiner
+$ docker build -t gitminer .
+$ docker run -it gitminer -h
 ```
 
 
@@ -97,23 +99,23 @@ optional arguments:
 ### EXAMPLE
 Searching for wordpress configuration files with passwords:
 ```
-$:> python gitminer-v2.0.py -q 'filename:wp-config extension:php FTP_HOST in:file ' -m wordpress -c pAAAhPOma9jEsXyLWZ-16RTTsGI8wDawbNs4 -o result.txt
+$:> python3 gitminer-v2.0.py -q 'filename:wp-config extension:php FTP_HOST in:file ' -m wordpress -c pAAAhPOma9jEsXyLWZ-16RTTsGI8wDawbNs4 -o result.txt
 ```
 ![Screenshot](https://2.bp.blogspot.com/-GbpzROiEynQ/VtLytfMqQiI/AAAAAAAAbnk/5hDphP4Mbf4/s1600/wordpressEX.png)
 
 Looking for brasilian government files containing passwords:
 ```
-$:> python gitminer-v2.0.py --query 'extension:php "root" in:file AND "gov.br" in:file' -m senhas -c pAAAhPOma9jEsXyLWZ-16RTTsGI8wDawbNs4
+$:> python3 gitminer-v2.0.py --query 'extension:php "root" in:file AND "gov.br" in:file' -m senhas -c pAAAhPOma9jEsXyLWZ-16RTTsGI8wDawbNs4
 ```
 
 Looking for shadow files on the etc paste:
 ```
-$:> python gitminer-v2.0.py --query 'filename:shadow path:etc' -m root -c pAAAhPOma9jEsXyLWZ-16RTTsGI8wDawbNs4
+$:> python3 gitminer-v2.0.py --query 'filename:shadow path:etc' -m root -c pAAAhPOma9jEsXyLWZ-16RTTsGI8wDawbNs4
 ```
 
 Searching for joomla configuration files with passwords:
 ```
-$:> python gitminer-v2.0.py --query 'filename:configuration extension:php "public password" in:file' -m joomla -c pAAAhPOma9jEsXyLWZ-16RTTsGI8wDawbNs4
+$:> python3 gitminer-v2.0.py --query 'filename:configuration extension:php "public password" in:file' -m joomla -c pAAAhPOma9jEsXyLWZ-16RTTsGI8wDawbNs4
 ```
 ![Screenshot](https://3.bp.blogspot.com/-1AsNmFKfsoA/VtLyvJFy2WI/AAAAAAAAbno/C7xTbxtzOo8/s1600/joomlaEX.png)
 
