@@ -13,7 +13,10 @@ def loadModule(module_name):
         if module_name not in module_json.keys():
             os.system('cls' if os.name == 'nt' else 'clear')
             print(banner())
-            print('\n{RED}[!]{END} Module {YELLOW}\"%s\"{END} not found in module file.'.format(**colors) % module_name)
+            if module_name is None:
+                pass
+            else:
+                print('\n{RED}[!]{END} Module {YELLOW}\"%s\"{END} not found in module file.'.format(**colors) % module_name)
             print('\n{GREEN}[+]{END} Modules found:'.format(**colors))
             for modules in module_json.keys():
                 print('    {GREEN}+{END} %s'.format(**colors) % modules)
