@@ -186,8 +186,8 @@ path:sites databases password                   | Drupal website database creden
 shodan_api_key language:python                  | Shodan API keys (try other languages too)
 filename:shadow path:etc                        | Contains encrypted passwords and account information of new unix systems
 filename:passwd path:etc                        | Contains user account information including encrypted passwords of traditional unix systems
-extension:avastlic                              | Contains license keys for Avast! Antivirus
-extension:dbeaver-data-sources.xml              | DBeaver config containing MySQL Credentials
+extension:avastlic "support.avast.com"          | Contains license keys for Avast! Antivirus
+filename:dbeaver-data-sources.xml               | DBeaver config containing MySQL Credentials
 filename:.esmtprc password                      | esmtp configuration
 extension:json googleusercontent client_secret  | OAuth credentials for accessing Google APIs
 HOMEBREW_GITHUB_API_TOKEN language:shell        | Github token usually set by homebrew users
@@ -197,3 +197,11 @@ filename:logins.json                            | Firefox saved password collect
 filename:CCCam.cfg                              | CCCam Server config file
 msg nickserv identify filename:config           | Possible IRC login passwords
 filename:settings.py SECRET_KEY                 | Django secret keys (usually allows for session hijacking, RCE, etc)
+filename:secrets.yml password                   | Usernames/passwords, Rails applications
+filename:master.key path:config                 | Rails master key (used for decrypting `credentials.yml.enc` for Rails 5.2+)
+filename:deployment-config.json                 | Created by sftp-deployment for Atom, contains server details and credentials
+filename:.ftpconfig                             | Created by remote-ssh for Atom, contains SFTP/SSH server details and credentials
+filename:.remote-sync.json                      | Created by remote-sync for Atom, contains FTP and/or SCP/SFTP/SSH server details and credentials
+filename:sftp.json path:.vscode                 | Created by vscode-sftp for VSCode, contains SFTP/SSH server details and credentails
+filename:sftp-config.json                       | Created by SFTP for Sublime Text, contains FTP/FTPS or SFTP/SSH server details and credentials
+filename:WebServers.xml                         | Created by Jetbrains IDEs, contains webserver credentials with encoded passwords ([not encrypted!](https://intellij-support.jetbrains.com/hc/en-us/community/posts/207074025/comments/207034775))
