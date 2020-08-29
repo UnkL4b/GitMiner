@@ -6,5 +6,5 @@ RUN apk --update add --virtual build-dependencies python3-dev build-base wget gi
   && git clone https://github.com/UnkL4b/GitMiner.git
 WORKDIR GitMiner
 RUN pip3 install -r requirements.txt
-ENTRYPOINT ["python3", "git_miner.py"]
+ENTRYPOINT ["python3", "gitminer-v2.0.py"]
 CMD ["--help"]
