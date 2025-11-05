@@ -1,6 +1,14 @@
-[![Python 2.7|3.6](https://img.shields.io/badge/Python-2.7%7C3.6-blue.svg)](https://www.python.org/) [![Gitminer 2.0](https://img.shields.io/badge/Gitminer-2.0-yellow.svg)](https://unkl4b.github.io)
+> ⚠️ **Repository Deprecated — Project Replaced**
+>
+> This repository is **no longer maintained** and has been officially **deprecated**.  
+> The project continues under active development at:  
+> **https://github.com/unkl4b/Gitminer3**
+>
+> Please migrate to **GitMiner3** to access the latest updates, improvements, and active support.
 
-![Screenshot](https://3.bp.blogspot.com/-UvpR_QDDAT0/VtiIc8OKrrI/AAAAAAAAboM/69BNKrvdUsU/s1600/gitminer-628x360.png)
+
+
+![Screenshot](https://github.com/UnkL4b/unkl4b.github.io/blob/master/img/deprecated_gitminer.png?raw=true)
 
 ```
  + Autor: UnK
